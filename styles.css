@@ -1,7 +1,11 @@
 body {
+  position: relative;
   background: hsl(185, 75%, 39%);
+  width: 100%;
+  min-height: 100vh;
   font-family: 'Kumbh Sans';
   font-size: 18px;
+  color: hsl(229, 23%, 23%);
   margin: 0;
   overflow: hidden;
 }
@@ -16,18 +20,76 @@ body::before, body::after {
 body::before {
   background: url('./images/bg-pattern-top.svg')center no-repeat;
   background-size: contain;
-  transform: translate(-40%, -50%);
+  top: -40%;
+  left: -50%;
 }
 
 body::after {
   background: url('./images/bg-pattern-bottom.svg')center no-repeat;
   background-size: contain;
-  transform: translate(40%, 50%);
+  bottom: -40%;
+  right: -50%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 a {
   color:hsl(229, 23%, 23%);
   text-decoration: none;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 2
+}
+
+.card {
+  background: #ffffff;
+  width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card .card-head {
+  background: url('./images/bg-pattern-card.svg');
+  height: 150px;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -48px;
+}
+
+.card .user-pic {
+  width: 96px;
+  height: 96px;
+  border: 5px #ffffff solid;
+  border-radius: 50%;
+}
+
+.card .user-name {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.card .user-age {
+  color: hsl(227, 10%, 46%);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.card .user-city {
+  font-weight: 400;
+  color: hsl(227, 10%, 46%);
 }
 
 .attribution {
