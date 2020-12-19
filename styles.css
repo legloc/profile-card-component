@@ -10,27 +10,6 @@ body {
   overflow: hidden;
 }
 
-body::before, body::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-body::before {
-  background: url('./images/bg-pattern-top.svg')center no-repeat;
-  background-size: contain;
-  top: -40%;
-  left: -50%;
-}
-
-body::after {
-  background: url('./images/bg-pattern-bottom.svg')center no-repeat;
-  background-size: contain;
-  bottom: -40%;
-  right: -50%;
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -40,16 +19,41 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100vh;
-  padding: 0 15px;
+  overflow: hidden;
   z-index: 2
 }
+
+.wrapper::before, .wrapper::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper::before {
+  background: url('./images/bg-pattern-top.svg')center no-repeat;
+  background-size: contain;
+  top: -40%;
+  left: -50%;
+}
+
+.wrapper::after {
+  background: url('./images/bg-pattern-bottom.svg')center no-repeat;
+  background-size: contain;
+  bottom: -40%;
+  right: -50%;
+}
+
 
 .card {
   background: #ffffff;
   width: 400px;
   border-radius: 15px;
+  margin: 15px;
   overflow: hidden;
+  z-index: 3;
 }
 
 .card .card-head {
